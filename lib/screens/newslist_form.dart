@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// TODO: Impor drawer yang sudah dibuat sebelumnya
+import 'package:football_news/widgets/left_drawer.dart';
 
 class NewsFormPage extends StatefulWidget {
   const NewsFormPage({super.key});
@@ -33,7 +33,8 @@ class _NewsFormPageState extends State<NewsFormPage> {
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
       ),
-      // TODO: Tambahkan drawer yang sudah dibuat di sini
+
+      drawer: LeftDrawer(),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(
@@ -169,7 +170,12 @@ class _NewsFormPageState extends State<NewsFormPage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text('Judul: $_title'),
-                                    // TODO: Munculkan value-value lainnya
+                                    Text('Konten: $_content'),
+                                    Text('Kategori: $_categories'),
+                                    Text('Thumbnail: $_thumbnail'),
+                                    Text(
+                                      'Unggulan: ${_isFeatured ? "Ya" : "Tidak"}',
+                                    ),
                                   ],
                                 ),
                               ),
